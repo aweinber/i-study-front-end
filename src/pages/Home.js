@@ -6,7 +6,6 @@ class Home extends Component {
     render() {
         return(
             <div>
-                <Header/>
                 <ul>
                     <li><Link to="/bill-detail">Bill Detail</Link></li>
                     <li><Link to="/committee-members">Committee Members</Link></li>

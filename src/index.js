@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import Header from './components/Header';
 import About from './pages/About.js';
 import BillDetail from './pages/BillDetail';
 import CommitteeMembers from './pages/CommitteeMembers'
@@ -21,7 +22,8 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 ReactDOM.render((
     <Router>
-        <Switch>
+        <div>
+            <Header />
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
             <Route path="/bill-detail" component={BillDetail} />
@@ -32,7 +34,7 @@ ReactDOM.render((
             <Route path="/register" component={Register} />
             <Route path="/roll-call" component={RollCall} />
             <Route path="/search" component={Search} />
-        </Switch>
+        </div>
     </Router>
     ),
     document.getElementById('root'));
