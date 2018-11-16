@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import About from './pages/About.js';
+import BillDetail from './pages/BillDetail';
+import CommitteeMembers from './pages/CommitteeMembers'
+import Influence from './pages/Influence'
+import Login from './pages/Members'
+import Register from './pages/Register'
+import RollCall from './pages/RollCall'
+import Search from './pages/Search'
+
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <Router>
+            <div>
+                <Route path="/about" component={About} />
+                <Route path="/bill-detail" component={BillDetail} />
+                <Route path="/committee-members" component={CommitteeMembers} />
+                <Route path="/influence" component={Influence} />
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
+                <Route path="/roll-call" component={RollCall} />
+                <Route path="/search" component={Search} />
+            </div>
+        </Router>
     );
   }
 }
