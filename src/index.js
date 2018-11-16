@@ -22,7 +22,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 ReactDOM.render((
     <Router>
         <Switch>
-            <Route path="/home" component={Home} />
+            <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
             <Route path="/bill-detail" component={BillDetail} />
             <Route path="/committee-members" component={CommitteeMembers} />
