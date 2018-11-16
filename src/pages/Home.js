@@ -45,7 +45,7 @@ const styles = theme => ({
     },
     linkBackground: {
         height: '50px',
-        backgroundColor: '#2756a3'
+        backgroundColor: '#274386'
     },
     linkNames: {
         color: 'white',
@@ -79,7 +79,7 @@ class Home extends Component {
 
                 <Grid item xs={4} className={classes.item}>
                     <Card className={classes.card}>
-                        <CardActionArea href="/committee-members">
+                        <CardActionArea href="/committees">
                         <CardMedia image={committee} className={classes.media}/>
                         <div className={classes.linkBackground}>
                             <Typography className={classes.linkNames}>

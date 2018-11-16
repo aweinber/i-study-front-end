@@ -27,7 +27,7 @@ ReactDOM.render((
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
             <Route path="/bills" component={BillDetail} />
-            <Route path="/committee-members" component={CommitteeMembers} />
+            <Route path="/committees" component={CommitteeMembers} />
             <Route path="/influence" component={Influence} />
             <Route path="/login" component={Login} />
             <Route path="/members" component={Members} />

@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme =>  ({
     appBar: {
-        backgroundColor: "#2756a3",
+        backgroundColor: "#274386",
         position: "static",
     },
     title: {
