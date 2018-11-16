@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import { withStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
+import CardMedia from '@material-ui/core/CardMedia'
+import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
+
+import bills from "../static/bill.jpg";
+import committee from "../static/committee.jpg";
+import congressmen from "../static/congressmen.jpg"
 
 const styles = theme => ({
     gridContainer: {
@@ -23,16 +28,7 @@ const styles = theme => ({
         textAlign: 'center',
         margin: '10px'
     },
-    list: {
-        textAlign: 'center',
-    },
-    listItem: {
-        color: 'blue',
-        float: 'right',
-    },
     link: {
-        // border: '1px red dotted',
-        textAlign: 'center',
         color: 'blue',
     },
     title: {
@@ -40,8 +36,16 @@ const styles = theme => ({
         fontSize: '25px',
         borderBottom: '1px solid black',
         marginBottom: '5px'
+    },
+    subtitle: {
+        textAlign: 'center'
+    },
+    item: {
+        textAlign: 'center'
+    },
+    media: {
+        height: '400px'
     }
-
 
 });
 
@@ -51,22 +55,47 @@ class Home extends Component {
     render() {
         const { classes } = this.props;
         return(
-            <Grid container direction="column" className={classes.gridContainer}>
-                <Grid item className={classes.gridItem}>
+            <Grid container spacing={24}>
 
-                    <Typography className={classes.title}>
-                        Welcome to BearGov!
-                    </Typography>
-                    <Typography>
+                <Grid item xs={12}>
+                    <Typography className={classes.title}>Welcome to BearGov!</Typography>
+                    <Typography className={classes.subtitle}>
                         Explore Congressional bills, groups, or members by following these links!
                     </Typography>
-                    <List className={classes.list}>
-                        <ListItem className={classes.listItem}><Link to="/bill-detail" className={classes.link}>Bills</Link></ListItem>
-                        <ListItem className={classes.listItem}><Link to="/committee-members" className={classes.link}>Committee Members</Link></ListItem>
-                        <ListItem className={classes.listItem}><Link to="/members" className={classes.link}>Members</Link></ListItem>
-                    </List>
-
                 </Grid>
+
+                <Grid item xs={4} className={classes.item}>
+                    <Card>
+                        <CardActionArea href="/bills">
+                            <CardMedia image={bills} className={classes.media} title="bills"/>
+                            <Typography>
+                                Bills
+                            </Typography>
+                        </CardActionArea>
+                    </Card>
+                </Grid>
+                <Grid item xs={4} className={classes.item}>
+                    <Card>
+                        <CardActionArea href="/committee-members">
+                        <CardMedia image={committee} className={classes.media}/>
+                        <Typography>
+                            Committees
+                        </Typography>
+                        </CardActionArea>
+
+                    </Card>
+                </Grid>
+                <Grid item xs={4} className={classes.item}>
+                    <Card>
+                        <CardActionArea href="/members">
+                        <CardMedia image={congressmen} className={classes.media}/>
+                        <Typography>
+                            Members
+                        </Typography>
+                        </CardActionArea>
+                    </Card>
+                </Grid>
+
             </Grid>
         )
     }
