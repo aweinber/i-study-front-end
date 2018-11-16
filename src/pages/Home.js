@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
@@ -45,7 +42,17 @@ const styles = theme => ({
     },
     media: {
         height: '400px'
+    },
+    linkBackground: {
+        height: '50px',
+        backgroundColor: '#2756a3'
+    },
+    linkNames: {
+        color: 'white',
+        fontSize: '16px',
+        paddingTop: '12px',
     }
+
 
 });
 
@@ -61,37 +68,44 @@ class Home extends Component {
                     <Card className={classes.card}>
                         <CardActionArea href="/bills">
                             <CardMedia image={bills} className={classes.media} title="bills"/>
-                            <Typography>
+                            <div className={classes.linkBackground}>
+                            <Typography className={classes.linkNames}>
                                 Bills
                             </Typography>
+                            </div>
                         </CardActionArea>
                     </Card>
                 </Grid>
+
                 <Grid item xs={4} className={classes.item}>
                     <Card className={classes.card}>
                         <CardActionArea href="/committee-members">
                         <CardMedia image={committee} className={classes.media}/>
-                        <Typography>
-                            Committees
-                        </Typography>
+                        <div className={classes.linkBackground}>
+                            <Typography className={classes.linkNames}>
+                                Committees
+                            </Typography>
+                        </div>
                         </CardActionArea>
-
                     </Card>
                 </Grid>
+
                 <Grid item xs={4} className={classes.item}>
                     <Card className={classes.card}>
                         <CardActionArea href="/members">
                         <CardMedia image={congressmen} className={classes.media}/>
-                        <Typography>
-                            Members
-                        </Typography>
+                            <div className={classes.linkBackground}>
+                                <Typography className={classes.linkNames}>
+                                    Congresspeople
+                                </Typography>
+                            </div>
                         </CardActionArea>
                     </Card>
                 </Grid>
 
                 <Grid item xs={12}>
                     <Typography className={classes.subtitle}>
-                        Explore Congressional bills, groups, or members by following these links or by searching below!
+                        Explore by bill, committee, or individual congressperson by following the above links.
                     </Typography>
                 </Grid>
 
