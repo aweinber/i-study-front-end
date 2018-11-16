@@ -1,25 +1,32 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../components/Header'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import { withStyles } from '@material-ui/core/styles'
+
+const styles = theme => ({
+    link: {
+        color: 'blue',
+        fontSize: '15px'
+    }
+});
+
+
 
 class Home extends Component {
     render() {
+        const { classes } = this.props;
         return(
             <div>
-                <ul>
-                    <li><Link to="/bill-detail">Bill Detail</Link></li>
-                    <li><Link to="/committee-members">Committee Members</Link></li>
-                    <li><Link to="/influence">Influence</Link></li>
-                    <li><Link to="/login">Login</Link></li>
-                    <li><Link to="/members">Members</Link></li>
-                    <li><Link to="/register">Register</Link></li>
-                    <li><Link to="/roll-call">Roll Call</Link></li>
-                    <li><Link to="/search">Search</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                </ul>
+                <List>
+                    <ListItem className={classes.link}><Link to="/bill-detail">Bill Detail</Link></ListItem>
+                    <ListItem className={classes.link}><Link to="/committee-members">Committee Members</Link></ListItem>
+                    <ListItem className={classes.link}><Link to="/members">Members</Link></ListItem>
+                    <ListItem className={classes.link}><Link to="/about">About</Link></ListItem>
+                </List>
             </div>
         )
     }
 }
 
-export default Home;
+export default withStyles(styles)(Home);
