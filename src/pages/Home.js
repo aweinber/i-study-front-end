@@ -23,10 +23,8 @@ const styles = theme => ({
         margin: '10px'
     },
     card: {
-        minWidth: '400px',
-        maxWidth: '600px',
-        textAlign: 'center',
-        margin: '10px'
+        marginLeft: '50px',
+        marginRight: '50px'
     },
     link: {
         color: 'blue',
@@ -34,14 +32,14 @@ const styles = theme => ({
     title: {
         textAlign: 'center',
         fontSize: '25px',
-        borderBottom: '1px solid black',
-        marginBottom: '5px'
+        margin: '5px',
+        textDecoration: 'underline'
     },
     subtitle: {
         textAlign: 'center'
     },
     item: {
-        textAlign: 'center'
+        textAlign: 'center',
     },
     media: {
         height: '400px'
@@ -65,7 +63,7 @@ class Home extends Component {
                 </Grid>
 
                 <Grid item xs={4} className={classes.item}>
-                    <Card>
+                    <Card className={classes.card}>
                         <CardActionArea href="/bills">
                             <CardMedia image={bills} className={classes.media} title="bills"/>
                             <Typography>
@@ -75,7 +73,7 @@ class Home extends Component {
                     </Card>
                 </Grid>
                 <Grid item xs={4} className={classes.item}>
-                    <Card>
+                    <Card className={classes.card}>
                         <CardActionArea href="/committee-members">
                         <CardMedia image={committee} className={classes.media}/>
                         <Typography>
@@ -86,7 +84,7 @@ class Home extends Component {
                     </Card>
                 </Grid>
                 <Grid item xs={4} className={classes.item}>
-                    <Card>
+                    <Card className={classes.card}>
                         <CardActionArea href="/members">
                         <CardMedia image={congressmen} className={classes.media}/>
                         <Typography>
