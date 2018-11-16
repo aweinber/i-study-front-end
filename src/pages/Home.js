@@ -36,9 +36,11 @@ const styles = theme => ({
         textDecoration: 'underline'
     },
     subtitle: {
-        textAlign: 'center'
+        textAlign: 'center',
+        marginTop: '50px'
     },
     item: {
+        marginTop: '30px',
         textAlign: 'center',
     },
     media: {
@@ -54,13 +56,6 @@ class Home extends Component {
         const { classes } = this.props;
         return(
             <Grid container spacing={24}>
-
-                <Grid item xs={12}>
-                    <Typography className={classes.title}>Welcome to BearGov!</Typography>
-                    <Typography className={classes.subtitle}>
-                        Explore Congressional bills, groups, or members by following these links!
-                    </Typography>
-                </Grid>
 
                 <Grid item xs={4} className={classes.item}>
                     <Card className={classes.card}>
@@ -92,6 +87,12 @@ class Home extends Component {
                         </Typography>
                         </CardActionArea>
                     </Card>
+                </Grid>
+
+                <Grid item xs={12}>
+                    <Typography className={classes.subtitle}>
+                        Explore Congressional bills, groups, or members by following these links or by searching below!
+                    </Typography>
                 </Grid>
 
             </Grid>
