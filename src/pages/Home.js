@@ -12,7 +12,6 @@ import congressmen from "../static/congressmen.jpg"
 
 
 
-
 class Home extends Component {
     render() {
         const { classes } = this.props;
@@ -49,14 +48,50 @@ class Home extends Component {
                     <Card className={classes.card}>
                         <CardActionArea href="/members">
                         <CardMedia image={congressmen} className={classes.media}/>
-                            <div className={classes.linkBackground}>
-                                <Typography className={classes.linkNames}>
-                                    Congresspeople
-                                </Typography>
-                            </div>
+                        <div className={classes.linkBackground}>
+                            <Typography className={classes.linkNames}>
+                                Congresspeople
+                            </Typography>
+                        </div>
                         </CardActionArea>
                     </Card>
                 </Grid>
+
+
+                <Grid item xs={4} className={classes.item}>
+                    <Card className={classes.card}>
+                        <CardActionArea/>
+                        <div className={classes.linkBackground}>
+                            <Typography className={classes.linkNames}>
+                                Influence Charts (Coming Soon)
+                            </Typography>
+                        </div>
+                    </Card>
+                </Grid>
+
+                <Grid item xs={4} className={classes.item}>
+                    <Card className={classes.card}>
+                        <CardActionArea/>
+                        <div className={classes.linkBackground}>
+                            <Typography className={classes.linkNames}>
+                                Statistics (Coming Soon)
+                            </Typography>
+                        </div>
+                    </Card>
+                </Grid>
+
+                <Grid item xs={4} className={classes.item}>
+                    <Card className={classes.card}>
+                        <CardActionArea/>
+                        <div className={classes.linkBackground}>
+                            <Typography className={classes.linkNames}>
+                                Geographic Influence (Coming Soon)
+                            </Typography>
+                        </div>
+                    </Card>
+                </Grid>
+
+
 
                 <Grid item xs={12}>
                     <Typography className={classes.subtitle}>

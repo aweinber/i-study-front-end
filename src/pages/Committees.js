@@ -9,9 +9,9 @@ class Committees extends Component {
 
         const { classes } = this.props;
 
-        const committeeOne = ["Agriculture, Nutrition, And Forestry", "Congress 113"];
-        const committeeTwo = ["Foreign Relations", "Congress 114"];
-        const committeeThree = ["Economic", "Congress 113"];
+        const committeeOne = ["Agriculture, Nutrition, And Forestry"];
+        const committeeTwo = ["Foreign Relations"];
+        const committeeThree = ["Armed Services"];
         const committees = [committeeOne, committeeTwo, committeeThree];
 
         let committeeMembers = [];
@@ -21,7 +21,7 @@ class Committees extends Component {
             let committee = committees[i];
             let committeeCreated = [];
             for (let j = 0; j < committee.length; j++) {
-                if (i === 0) {
+                if (j === 0) {
                     committeeCreated.push(<Typography className={classes.name}>{committee}</Typography>);
                     } else {
                     committeeCreated.push(<Typography>{committees}</Typography>);
