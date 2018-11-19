@@ -12,14 +12,13 @@ import congressmen from "../static/congressmen.jpg"
 
 
 
-
 class Home extends Component {
     render() {
         const { classes } = this.props;
         return(
             <Grid container spacing={24}>
 
-                <Grid item xs={3} className={classes.item}>
+                <Grid item xs={4} className={classes.item}>
                     <Card className={classes.card}>
                         <CardActionArea href="/bills">
                             <CardMedia image={bills} className={classes.media} title="bills"/>
@@ -32,7 +31,7 @@ class Home extends Component {
                     </Card>
                 </Grid>
 
-                <Grid item xs={3} className={classes.item}>
+                <Grid item xs={4} className={classes.item}>
                     <Card className={classes.card}>
                         <CardActionArea href="/committees">
                         <CardMedia image={committee} className={classes.media}/>
@@ -45,31 +44,54 @@ class Home extends Component {
                     </Card>
                 </Grid>
 
-                <Grid item xs={3} className={classes.item}>
+                <Grid item xs={4} className={classes.item}>
                     <Card className={classes.card}>
                         <CardActionArea href="/members">
                         <CardMedia image={congressmen} className={classes.media}/>
-                            <div className={classes.linkBackground}>
-                                <Typography className={classes.linkNames}>
-                                    Congresspeople
-                                </Typography>
-                            </div>
+                        <div className={classes.linkBackground}>
+                            <Typography className={classes.linkNames}>
+                                Congresspeople
+                            </Typography>
+                        </div>
                         </CardActionArea>
                     </Card>
                 </Grid>
 
-                <Grid item xs={3} className={classes.item}>
+
+                <Grid item xs={4} className={classes.item}>
                     <Card className={classes.card}>
-                        <CardActionArea href="/members">
-                            <CardMedia image={congressmen} className={classes.media}/>
-                            <div className={classes.linkBackground}>
-                                <Typography className={classes.linkNames}>
-                                    Congresspeople
-                                </Typography>
-                            </div>
-                        </CardActionArea>
+                        <CardActionArea/>
+                        <div className={classes.linkBackground}>
+                            <Typography className={classes.linkNames}>
+                                Influence Charts (Coming Soon)
+                            </Typography>
+                        </div>
                     </Card>
                 </Grid>
+
+                <Grid item xs={4} className={classes.item}>
+                    <Card className={classes.card}>
+                        <CardActionArea/>
+                        <div className={classes.linkBackground}>
+                            <Typography className={classes.linkNames}>
+                                Statistics (Coming Soon)
+                            </Typography>
+                        </div>
+                    </Card>
+                </Grid>
+
+                <Grid item xs={4} className={classes.item}>
+                    <Card className={classes.card}>
+                        <CardActionArea/>
+                        <div className={classes.linkBackground}>
+                            <Typography className={classes.linkNames}>
+                                Geographic Influence (Coming Soon)
+                            </Typography>
+                        </div>
+                    </Card>
+                </Grid>
+
+
 
                 <Grid item xs={12}>
                     <Typography className={classes.subtitle}>
