@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
+import { Link } from 'react-router-dom'
 
 const styles = theme =>  ({
     appBar: {
@@ -11,7 +12,8 @@ const styles = theme =>  ({
     },
     title: {
         color: 'white',
-        fontFamily: 'gill sans'
+        fontFamily: 'gill sans',
+        textDecoration: 'none'
     }
 });
 
@@ -22,7 +24,7 @@ class Header extends Component {
             <AppBar className={classes.appBar}>
                 <Toolbar>
                     <Typography variant="title" className={classes.title}>
-                        Bear Gov
+                        <Link to="/" className={classes.title}> Bear Gov </Link>
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -30,5 +32,7 @@ class Header extends Component {
     }
 
 }
+
+
 
 export default withStyles(styles)(Header);
