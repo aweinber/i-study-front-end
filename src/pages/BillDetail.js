@@ -8,8 +8,8 @@ class BillDetail extends Component {
     render() {
         const { classes } = this.props;
 
-        const memberOne = ["Mike Senator", "Florida", "Means and Ways"];
-        const memberTwo = ["Jill Congressperson", "Maine-2", "Foreign Affairs"];
+        const memberOne = ["Mike Senator", "  -Florida", "  -Means and Ways"];
+        const memberTwo = ["Jill Congressperson", "  -Maine-2", "  -Foreign Affairs"];
         const members = [memberOne, memberTwo];
 
         let memberItems = [];
@@ -48,13 +48,14 @@ const styles = theme => ({
         borderRadius: "5px"
     },
     gridContainer: {
-        margin: "10px"
+        margin: "20px"
     },
     name: {
         fontWeight: 'bold',
+        color: 'blue',
         textDecoration: 'underline',
         textAlign: 'center',
-        fontSize: '15px'
+        fontSize: '18px'
     }
 });
 
