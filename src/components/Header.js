@@ -14,6 +14,12 @@ const styles = theme =>  ({
         color: 'white',
         fontFamily: 'gill sans',
         textDecoration: 'none'
+    },
+    aboutLink: {
+        color: 'white',
+        fontFamily: 'Arial',
+        textDecoration: 'none',
+        float: 'right'
     }
 });
 
@@ -25,6 +31,9 @@ class Header extends Component {
                 <Toolbar>
                     <Typography variant="title" className={classes.title}>
                         <Link to="/" className={classes.title}> Bear Gov </Link>
+                    </Typography>
+                    <Typography className={classes.aboutLink}>
+                        <Link to="/about" className={classes.aboutLink}> About </Link>
                     </Typography>
                 </Toolbar>
             </AppBar>

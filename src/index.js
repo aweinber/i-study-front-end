@@ -9,7 +9,7 @@ import About from './pages/About.js';
 import BillDetail from './pages/BillDetail';
 import Committees from './pages/Committees'
 import Influence from './pages/Influence'
-import Login from './pages/Members'
+import Login from './pages/Login'
 import Register from './pages/Register'
 import Members from './pages/Members'
 import RollCall from './pages/RollCall'
@@ -26,6 +26,7 @@ ReactDOM.render((
             <Header />
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
+            <Route path="/login" component={Login} />
             <Route path="/bills" component={BillDetail} />
             <Route path="/committees" component={Committees} />
             {/*<Route path="/influence" component={Influence} />*/}
