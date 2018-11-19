@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import Typography from "@material-ui/core/Typography/Typography";
 import Grid from "@material-ui/core/Grid/Grid";
 import {withStyles} from "@material-ui/core";
@@ -33,6 +34,36 @@ class BillDetail extends Component {
                 <h1>Members</h1>
                 <Grid container spacing={24} className={classes.gridContainer}>
                     {memberItems}
+=======
+import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid'
+import { withStyles } from '@material-ui/core/styles'
+
+class BillDetail extends Component {
+    render() {
+        const { classes } = this.props
+
+        const bill1 = ["H.R. 6784: Manage our Wolves Act",]
+        const bill2 = ["H.R. 7115: 3D Firearms Prohibitions Act"]
+        const bill3 = ["H.R. 5682: FIRST STEP Act"]
+        const bills = [bill1, bill2, bill3]
+
+        const formattedBills = []
+        for (let i = 0; i < bills.length; i++) {
+            const bill = bills[i]
+            const billName = bill[0]
+            const gridText = <Typography className={classes.name}>{billName}</Typography>
+            formattedBills.push(<Grid item className={classes.gridItem}>{gridText}</Grid>)
+
+        }
+        return(
+            <div>
+                <h1>
+                    Bill Detail
+                </h1>
+                <Grid container>
+                    {formattedBills}
+>>>>>>> 1e7867ab87fd3bc7a685bf3253bc4e5bd5630db4
                 </Grid>
             </div>
         )
@@ -48,6 +79,7 @@ const styles = theme => ({
         borderRadius: "5px"
     },
     gridContainer: {
+<<<<<<< HEAD
         margin: "20px"
     },
     name: {
@@ -60,3 +92,16 @@ const styles = theme => ({
 });
 
 export default (withStyles)(styles)(BillDetail);
+=======
+        margin: "10px"
+    },
+    name: {
+        fontWeight: 'bold',
+        textDecoration: 'underline',
+        textAlign: 'center',
+        fontSize: '15px'
+    }
+});
+
+export default (withStyles)(styles)(BillDetail)
+>>>>>>> 1e7867ab87fd3bc7a685bf3253bc4e5bd5630db4
