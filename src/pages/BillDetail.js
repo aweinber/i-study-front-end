@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class BillDetail extends Component {
     render() {
         return(

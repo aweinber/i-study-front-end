@@ -28,12 +28,12 @@ ReactDOM.render((
             <Route path="/about" component={About} />
             <Route path="/bills" component={BillDetail} />
             <Route path="/committees" component={CommitteeMembers} />
-            <Route path="/influence" component={Influence} />
-            <Route path="/login" component={Login} />
+            {/*<Route path="/influence" component={Influence} />*/}
+            {/*<Route path="/login" component={Login} />*/}
             <Route path="/members" component={Members} />
-            <Route path="/register" component={Register} />
-            <Route path="/roll-call" component={RollCall} />
-            <Route path="/search" component={Search} />
+            {/*<Route path="/register" component={Register} />*/}
+            {/*<Route path="/roll-call" component={RollCall} />*/}
+            {/*<Route path="/search" component={Search} />*/}
         </div>
     </Router>
     ),
