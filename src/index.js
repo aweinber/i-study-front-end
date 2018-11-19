@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import Header from './components/Header';
 import About from './pages/About.js';
 import BillDetail from './pages/BillDetail';
-import CommitteeMembers from './pages/CommitteeMembers'
+import Committees from './pages/Committees'
 import Influence from './pages/Influence'
 import Login from './pages/Members'
 import Register from './pages/Register'
@@ -27,7 +27,7 @@ ReactDOM.render((
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
             <Route path="/bills" component={BillDetail} />
-            <Route path="/committees" component={CommitteeMembers} />
+            <Route path="/committees" component={Committees} />
             {/*<Route path="/influence" component={Influence} />*/}
             {/*<Route path="/login" component={Login} />*/}
             <Route path="/members" component={Members} />

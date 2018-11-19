@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class CommitteeMembers extends Component {
+class Committees extends Component {
     render() {
         return(
             <h1>
@@ -10,4 +10,4 @@ class CommitteeMembers extends Component {
     }
 }
 
-export default CommitteeMembers
+export default Committees
