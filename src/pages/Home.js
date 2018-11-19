@@ -82,12 +82,13 @@ class Home extends Component {
 
                 <Grid item xs={4} className={classes.item}>
                     <Card className={classes.card}>
-                        <CardActionArea/>
-                        <div className={classes.linkBackground}>
-                            <Typography className={classes.linkNames}>
-                                Geographic Influence (Coming Soon)
-                            </Typography>
-                        </div>
+                        <CardActionArea href="/about">
+                            <div className={classes.linkBackground}>
+                                <Typography className={classes.linkNames}>
+                                    About Us
+                                </Typography>
+                            </div>
+                        </CardActionArea>
                     </Card>
                 </Grid>
 
