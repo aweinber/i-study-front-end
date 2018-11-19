@@ -1,17 +1,24 @@
 import React, { Component } from 'react'
 import Grid from '@material-ui/core/Grid'
+import { withStyles } from '@material-ui/core/styles'
 
+const styles = theme => ({
+    gridItem: {
+        border: "1px solid black"
+    },
+});
 
 class Members extends Component {
 
-
     render() {
+        const { classes } = this.props;
+
         const memberOne = ["Mike Senator", "Florida", "Means and Ways"];
         const memberTwo = ["Jill Congressperson", "Maine-2", "Foreign Affairs"];
         const members = [memberOne, memberTwo];
 
         let memberItems = [];
-        // members.forEach((member) => memberItems.push(<Grid item>{member}</Grid>));
+
         for (let i = 0; i < members.length; i++) {
             let member = members[i];
             let memberListed = []
@@ -23,7 +30,7 @@ class Members extends Component {
                     memberListed.push(<h6>{member[j]}</h6>)
                 }
             }
-            memberItems.push(<Grid item>{memberListed}</Grid>)
+            memberItems.push(<Grid item className={classes.gridItem}>{memberListed}</Grid>)
         }
 
         return(
@@ -37,4 +44,4 @@ class Members extends Component {
     }
 }
 
-export default Members;
+export default (withStyles)(styles)(Members);
