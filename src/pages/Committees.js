@@ -1,42 +1,38 @@
 import React, { Component } from 'react'
-import { withStyles } from '@material-ui/core/styles'
-import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
+import Typography from "@material-ui/core/Typography/Typography";
+import Grid from "@material-ui/core/Grid/Grid";
+import {withStyles} from "@material-ui/core";
 
 
 class Committees extends Component {
     render() {
-
         const { classes } = this.props;
 
-        const committeeOne = ["Agriculture, Nutrition, And Forestry"];
-        const committeeTwo = ["Foreign Relations"];
-        const committeeThree = ["Armed Services"];
-        const committees = [committeeOne, committeeTwo, committeeThree];
+        const memberOne = ["Econ", "Congress 111"];
+        const memberTwo = ["Pharma", "Congress 111"];
+        const members = [memberOne, memberTwo];
 
-        let committeeMembers = [];
+        let memberItems = [];
 
-        //later add members to members to correct committee
-        for (let i = 0; i < committees.length; i++) {
-            let committee = committees[i];
-            let committeeCreated = [];
-            for (let j = 0; j < committee.length; j++) {
+        for (let i = 0; i < members.length; i++) {
+            let member = members[i];
+            let memberListed = [];
+            for (let j = 0; j < member.length; j++) {  //iterate through member of
                 if (j === 0) {
-                    committeeCreated.push(<Typography className={classes.name}>{committee}</Typography>);
-                    } else {
-                    committeeCreated.push(<Typography>{committees}</Typography>);
-                    }
+                    memberListed.push(<Typography className={classes.name}>{member[j]}</Typography>);
+                }
+                else {
+                    memberListed.push(<Typography>{member[j]}</Typography>);
+                }
             }
-
-            committeeMembers.push(<Grid item className={classes.gridItem} xs={2}>{committeeCreated}</Grid>)
+            memberItems.push(<Grid item className={classes.gridItem} xs={2}>{memberListed}</Grid>)
         }
-
 
         return(
             <div>
-                <h1>Committee</h1>
+                <h1>Members</h1>
                 <Grid container spacing={24} className={classes.gridContainer}>
-                    {committeeMembers}
+                    {memberItems}
                 </Grid>
             </div>
         )
@@ -62,4 +58,4 @@ const styles = theme => ({
     }
 });
 
-export default (withStyles)(styles)(Committees)
+export default (withStyles)(styles)(Committees);
