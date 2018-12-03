@@ -530,3 +530,4 @@ function main() {
 //  NS.buttonPressed.call()
 //}
 
+initialize()

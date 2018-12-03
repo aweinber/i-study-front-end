@@ -1,4 +1,4 @@
-// import { initialize } from "../viz_D3/andrewPhillipsScript.js"
+import { initialize } from "../viz_D3/andrewPhillipsScript.js"
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles'
 
