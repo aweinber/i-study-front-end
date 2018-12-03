@@ -43,6 +43,9 @@ class HeaderMenu extends Component {
                     <Link to="/committees" className={classes.link}>
                         <MenuItem onClick={this.handleClose}>Committees</MenuItem>
                     </Link>
+                    <Link to="/visual" className={classes.link}>
+                        <MenuItem onClick={this.handleClose}>Visual</MenuItem>
+                    </Link>
                     <Link to="/members" className={classes.link}>
                         <MenuItem onClick={this.handleClose}>Congresspeople</MenuItem>
                     </Link>

@@ -18,7 +18,8 @@ NS.natCourt = {
 }*/
 
 // Load data and call main
-function initialize() {
+export function initialize() {
+    console.log('hey')
     // load edges (links in d3 world) into NS.linksList
     d3.csv(NS.edgesfilepath, function(edges) {
         NS.linksList = edges;
@@ -528,6 +529,4 @@ function main() {
 //function buttonPressed() {
 //  NS.buttonPressed.call()
 //}
-
-initialize()
 

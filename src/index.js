@@ -13,7 +13,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Members from './pages/Members'
 import RollCall from './pages/RollCall'
-import Search from './pages/Search'
+import Visual from './pages/Visual';
 import Home from './pages/Home'
 
 
@@ -29,7 +29,7 @@ ReactDOM.render((
             <Route path="/login" component={Login} />
             <Route path="/bills" component={BillDetail} />
             <Route path="/committees" component={Committees} />
-            {/*<Route path="/influence" component={Influence} />*/}
+            <Route path="/visual" component={Visual} />
             {/*<Route path="/login" component={Login} />*/}
             <Route path="/members" component={Members} />
             {/*<Route path="/register" component={Register} />*/}
