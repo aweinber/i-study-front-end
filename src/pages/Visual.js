@@ -21,7 +21,9 @@ class Visual extends Component {
         const { classes } = this.props
         return(
             <div>
-                <div className="graph" />
+                <div className="graph" >
+                    {initialize()}        
+                </div>
             </div>
         )
     }
