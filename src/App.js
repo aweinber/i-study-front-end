@@ -7,7 +7,11 @@ import Login from "./old-pages/Login";
 import Members from "./components/Members";
 import Home from "./components/Home";
 import Header from './components/Header';
+import RollCallContainer from './containers/RollCallContainer'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+
+
 
 class App extends Component {
   render() {
@@ -22,6 +26,7 @@ class App extends Component {
                 <Route path="/bills" component={BillsContainer} />
                 <Route path="/committees" component={Committees} />
                 <Route path="/members" component={Members} />
+                <Route path="/roll-call" component={RollCallContainer} />
             </div>
         </Router>
 
