@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
-import Bill from './Bill'
 import { withStyles } from '@material-ui/core/styles'
 
 
@@ -11,7 +10,6 @@ class BillList extends Component {
     render() {
         const bills = this.props.billList;
         const {classes} = this.props;
-
 
         return(
             <Grid container className={classes.gridContainer}>
