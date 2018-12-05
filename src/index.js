@@ -1,42 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import {Provider} from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-
-import Header from './components/Header';
-import About from './pages/About.js';
-import BillDetail from './pages/BillDetail';
-import Committees from './pages/Committees'
-import Influence from './pages/Influence'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import Members from './pages/Members'
-import RollCall from './pages/RollCall'
-import Visual from './pages/Visual';
-import Home from './pages/Home'
+import { createStore } from 'redux'
+import reducers from './reducers'
+import App from './App'
 
 
 
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+const store = createStore(reducers);
+
+
+console.log(store.getState());
+
+
 
 ReactDOM.render((
-    <Router>
-        <div>
-            <Header />
-            <Route path="/" exact component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/login" component={Login} />
-            <Route path="/bills" component={BillDetail} />
-            <Route path="/committees" component={Committees} />
-            <Route path="/visual" component={Visual} />
-            {/*<Route path="/login" component={Login} />*/}
-            <Route path="/members" component={Members} />
-            {/*<Route path="/register" component={Register} />*/}
-            {/*<Route path="/roll-call" component={RollCall} />*/}
-            {/*<Route path="/search" component={Search} />*/}
-        </div>
-    </Router>
+    <Provider store={store} >
+        <App />
+    </Provider>
     ),
     document.getElementById('root'));
 
