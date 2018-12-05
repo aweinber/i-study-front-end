@@ -4,7 +4,7 @@ import BillsContainer from "./containers/BillsContainer";
 import About from "./components/About";
 import Committees from "./components/Committees";
 import Login from "./old-pages/Login";
-import Members from "./components/Members";
+import MembersContainer from "./containers/MembersContainer";
 import Home from "./components/Home";
 import Header from './components/Header';
 import RollCallContainer from './containers/RollCallContainer'
@@ -25,7 +25,7 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/bills" component={BillsContainer} />
                 <Route path="/committees" component={Committees} />
-                <Route path="/members" component={Members} />
+                <Route path="/members" component={MembersContainer} />
                 <Route path="/roll-call" component={RollCallContainer} />
             </div>
         </Router>
