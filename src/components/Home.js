@@ -17,6 +17,11 @@ class Home extends Component {
         const { classes } = this.props;
         return(
             <Grid container spacing={24}>
+                <Grid item xs={12}>
+                    <Typography className={classes.subtitle}>
+                        Explore by bill, committee, or individual congressperson by following the above links.
+                    </Typography>
+                </Grid>
 
                 <Grid item xs={4} className={classes.item}>
                     <Card className={classes.card}>
@@ -94,11 +99,7 @@ class Home extends Component {
 
 
 
-                <Grid item xs={12}>
-                    <Typography className={classes.subtitle}>
-                        Explore by bill, committee, or individual congressperson by following the above links.
-                    </Typography>
-                </Grid>
+
 
             </Grid>
         )
