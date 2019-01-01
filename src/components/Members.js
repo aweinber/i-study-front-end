@@ -7,9 +7,38 @@ import Typography from '@material-ui/core/Typography'
 
 class Members extends Component {
 
-    render() {
-        const { classes } = this.props;
 
+    constructor(props) {
+        super(props);
+        this.state = {data: [], requestFailed: '', classes: {}};
+    }
+
+    componentDidMount() {
+        var request = new Request('http://localhost:3001/api/congress/113/members', {
+            method: 'GET',
+            headers: new Headers({'Content-Type': 'application/json'})
+        });
+
+        fetch(request)
+            .then((response) => {
+                if(!response.ok) throw new Error(response.status);
+                else return response.json();
+            })
+            .then((data) => {
+                this.setState({ data: data });
+                console.log("DATA STORED");
+                console.log(data);
+            })
+            .catch((error) => {
+                console.log('error: ' + error);
+                this.setState({ requestFailed: true });
+            });
+    }
+
+    render() {
+        const { classes } = this.state;
+
+        //http://localhost:3001/api/congress/113/members
         const memberOne = ["Mike Senator", "Florida", "Means and Ways"];
         const memberTwo = ["Jill Congressperson", "Maine-2", "Foreign Affairs"];
         const members = [memberOne, memberTwo];
@@ -21,25 +50,26 @@ class Members extends Component {
             let memberListed = [];
             for (let j = 0; j < member.length; j++) {  //iterate through member of
                 if (j === 0) {
-                    memberListed.push(<Typography className={classes.name}>{member[j]}</Typography>);
+                    memberListed.push(<Typography className={classes.name}>{this.state.data}</Typography>);
                 }
                 else {
-                    memberListed.push(<Typography>{member[j]}</Typography>);
+                    member.push(<Typography>{member[j]}</Typography>);
                 }
             }
-            memberItems.push(<Grid item className={classes.gridItem} xs={2}>{memberListed}</Grid>)
+            memberItems.push(<Grid item className={classes.gridItem} xs={2}>{member}</Grid>)
         }
 
         return(
             <div>
                 <h1>Members</h1>
                 <Grid container spacing={24} className={classes.gridContainer}>
-                    {memberItems}
+                    {members}
                 </Grid>
             </div>
         )
     }
 }
+
 
 const styles = theme => ({
     gridItem: {
