@@ -65,12 +65,13 @@ class Home extends Component {
 
                 <Grid item xs={4} className={classes.item}>
                     <Card className={classes.card}>
-                        <CardActionArea/>
+                        <CardActionArea href="/aPhillips">
                         <div className={classes.linkBackground}>
                             <Typography className={classes.linkNames}>
-                                Influence Charts (Coming Soon)
+                                Visuals (Coming Soon)
                             </Typography>
                         </div>
+                        </CardActionArea>
                     </Card>
                 </Grid>
 

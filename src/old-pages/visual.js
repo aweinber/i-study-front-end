@@ -1,12 +1,18 @@
-import React, { Component } from 'react'
-import Typography from "@material-ui/core/Typography/Typography";
-import Grid from "@material-ui/core/Grid/Grid";
-import * as d3 from "d3";
-import {withStyles} from "@material-ui/core";
+import React, { Component } from 'react';
+import { withStyles } from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button';
 
-class Register extends Component {
+const styles = theme => ({
+    button: {
+        backgroundColor: 'blue',
+        color: 'white',
+    },
+    input: {
+        display: 'none',
+    },
+});
 
-
+class Visual extends Component {
     componentDidMount () {
 
         const d = document.createElement("script");
@@ -565,36 +571,28 @@ class Register extends Component {
     }
 
     render() {
-        console.log('hi')
-        const { classes } = this.props;
-
-        const memberOne = ["Econ", "Congress 111"];
-        const memberTwo = ["Pharma", "Congress 111"];
-        const members = [memberOne, memberTwo];
-
-        let memberItems = [];
-
-        for (let i = 0; i < members.length; i++) {
-            let member = members[i];
-            let memberListed = [];
-            for (let j = 0; j < member.length; j++) {  //iterate through member of
-                if (j === 0) {
-                    memberListed.push(<Typography className={classes.name}>{member[j]}</Typography>);
-                }
-                else {
-                    memberListed.push(<Typography>{member[j]}</Typography>);
-                }
-            }
-            memberItems.push(<Grid item className={classes.gridItem} xs={2}>{memberListed}</Grid>)
-        }
-
+        const { classes } = this.props
         return(
             <div>
-                <h1>Members</h1>
-                <Grid container spacing={24} className={classes.gridContainer}>
-                    {memberItems}
-                </Grid>
-
+                <Button className={classes.button}>Login</Button>
+                <Button color="primary" className={classes.button}>
+                    Forgot Username
+                </Button>
+                <Button color="secondary" className={classes.button}>
+                    Forgot Password
+                </Button>
+                <input
+                    accept="image/*"
+                    className={classes.input}
+                    id="flat-button-file"
+                    multiple
+                    type="file"
+                />
+                <label htmlFor="flat-button-file">
+                    <Button component="span" className={classes.button}>
+                        Upload
+                    </Button>
+                </label>
 
                 <div className="title">
                     <p>Natural Court</p>
@@ -613,11 +611,14 @@ class Register extends Component {
                     <div className="button"></div>
                 </div>
 
-
             </div>
         )
     }
-}
+
+};
 
 
-export default (withStyles)(Register);
+
+
+export default (withStyles)(styles)(Visual);
+

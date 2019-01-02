@@ -20,11 +20,12 @@ const styles = theme =>  ({
     title: {
         color: 'white',
         fontFamily: 'gill sans',
-        flex: '1'
+        flex: '1',
+        fontSize: '30px'
     },
     iconLink: {
         color: 'white',
-        marginRight: '5px'
+        marginRight: '10px'
     },
     menu: {
         marginLeft: 'auto',

@@ -61,6 +61,9 @@ class HeaderMenu extends Component {
                     <Link to="/login" className={classes.link}>
                         <MenuItem onClick={this.handleClose}>Login</MenuItem>
                     </Link>
+                    <Link to="/register" className={classes.link}>
+                        <MenuItem onClick={this.handleClose}>Register</MenuItem>
+                    </Link>
 
 
                 </Menu>

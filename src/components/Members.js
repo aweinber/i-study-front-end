@@ -11,8 +11,9 @@ class Members extends Component {
     constructor(props) {
         super(props);
         this.state = {data: [], requestFailed: '', classes: {}};
+        console.log('gold member')
     }
-
+    //create control components and select field to toggle between 113 and 114, set these as state to choose congress fetch
     componentDidMount() {
         var request = new Request('http://localhost:3001/api/congress/113/members', {
             method: 'GET',
@@ -36,34 +37,38 @@ class Members extends Component {
     }
 
     render() {
-        const { classes } = this.state;
+
+
+
+        //const { classes } = this.state;
 
         //http://localhost:3001/api/congress/113/members
-        const memberOne = ["Mike Senator", "Florida", "Means and Ways"];
-        const memberTwo = ["Jill Congressperson", "Maine-2", "Foreign Affairs"];
-        const members = [memberOne, memberTwo];
-
+        //controled form
         let memberItems = [];
+        this.state.data.forEach((member)=> {
+            memberItems.push(<Typography>{member.firstName}</Typography>)
+            memberItems.push(<Typography>{member.lastName}</Typography>)
+        })
 
-        for (let i = 0; i < members.length; i++) {
-            let member = members[i];
-            let memberListed = [];
-            for (let j = 0; j < member.length; j++) {  //iterate through member of
-                if (j === 0) {
-                    memberListed.push(<Typography className={classes.name}>{this.state.data}</Typography>);
-                }
-                else {
-                    member.push(<Typography>{member[j]}</Typography>);
-                }
-            }
-            memberItems.push(<Grid item className={classes.gridItem} xs={2}>{member}</Grid>)
-        }
+        // for (let i = 0; i < members.length; i++) {
+        //     let member = members[i];
+        //     let memberListed = [];
+        //     for (let j = 0; j < member.length; j++) {  //iterate through member of
+        //         if (j === 0) {
+        //             memberListed.push(<Typography className={classes.name}>{this.state.data}</Typography>);
+        //         }
+        //         else {
+        //             member.push(<Typography>{member[j]}</Typography>);
+        //         }
+        //     }
+        //     memberItems.push(<Grid item className={classes.gridItem} xs={2}>{member}</Grid>)
+        // }
 
         return(
             <div>
                 <h1>Members</h1>
-                <Grid container spacing={24} className={classes.gridContainer}>
-                    {members}
+                <Grid container spacing={24}>
+                    {memberItems}
                 </Grid>
             </div>
         )
